@@ -1,1 +1,12 @@
 <p>content-card works!</p>
+<!-- Display the contents of your ContentList in your Content-Card component's html,utilizing the function you defined in the ContentList class -->
+
+<!-- 
+    1. *ngFor: iterate over each item in contentList.getContentArray();
+    2. i = index: holds current index in loop
+-->
+<div *ngFor="let contentItem of contentList.getContentArray(); let i = index">
+
+    <!-- Inside Loop: bind HTML content with items -->
+    <div [innerHTML]="contentList.getIndexContent(i)"></div>
+  </div>  

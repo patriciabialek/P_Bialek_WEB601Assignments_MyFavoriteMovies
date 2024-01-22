@@ -1,7 +1,7 @@
 //Create a class, with the following attributes and methods
 import { Content } from '../helper-files/content-interface';
 
-class ContentList{
+export class ContentList{
     //1. private array of type Content
     private contentArray: Content[];
     //2. constructor that initially sets the array to be empty
@@ -9,7 +9,7 @@ class ContentList{
         this.contentArray = [];
     }
     //3. getter function that returns your Content array
-    get ContentArray(): Content[] {
+    getContentArray(): Content[] {
         return this.contentArray;
     }
     //4. function that adds 1 Content item to the end of the array
