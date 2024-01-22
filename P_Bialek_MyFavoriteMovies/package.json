@@ -2,9 +2,9 @@
   "name": "p-bialek-my-favorite-movies",
   "version": "0.0.1",
   "scripts": {
-    "generatecomponent": "ng gen component",
-    "generatepipe": "ng gen pipe",
-    "generatedirective": "ng gen directive",
+    "generatecomponent": "ng generate component",
+    "generatepipe": "ng generate pipe",
+    "generatedirective": "ng generate directive",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
