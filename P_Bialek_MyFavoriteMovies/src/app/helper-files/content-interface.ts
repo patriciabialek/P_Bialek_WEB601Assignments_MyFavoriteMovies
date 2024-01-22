@@ -1,6 +1,6 @@
 //define an interface with the following parameters
 //Note: ? is optional
-interface Content {
+export interface Content {
     id: number;
     title: string;
     description: string;
