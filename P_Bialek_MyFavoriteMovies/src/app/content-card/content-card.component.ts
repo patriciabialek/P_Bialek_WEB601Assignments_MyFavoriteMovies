@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ContentList } from '../helper-files/content-list';
 import { Content } from '../helper-files/content-interface';
 
@@ -10,10 +10,14 @@ import { Content } from '../helper-files/content-interface';
   templateUrl: './content-card.component.html',
   styleUrl: './content-card.component.scss'
 })
-export class ContentCardComponent {
-  public contentList: ContentList = new ContentList();
+export class ContentCardComponent implements OnInit{
+  @Input() public contentList: ContentList = new ContentList();
 
   constructor() {
+    
+  }
+  
+  ngOnInit(){
     // Add at least 3 valid items to the contentList in the constructor
     const item1: Content = { id: 1, title: 'Coraline', description: 'Horror/Fantasy', creator: 'Henry Selick' };
     const item2: Content = { id: 2, title: 'Eternal Sunshine of the Spotless Mind', description: 'Romance/Sci-fi', creator: 'Michel Gondry' };
@@ -23,5 +27,6 @@ export class ContentCardComponent {
     this.contentList.addItem(item2);
     this.contentList.addItem(item3);
   }
+
 
 }

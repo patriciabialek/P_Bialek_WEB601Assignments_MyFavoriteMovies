@@ -5,10 +5,9 @@ import { ContentCardComponent } from './content-card/content-card.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ContentCardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  //directives: [ContentCardComponent],
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'Patricia\'s Favorite Movies';
