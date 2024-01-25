@@ -9,35 +9,31 @@ export class ContentList{
         this.contentArray = [];
     }
     //3. getter function that returns your Content array
-    getContentArray(): Content[] {
+    get getContentArray() {
         return this.contentArray;
     }
     //4. function that adds 1 Content item to the end of the array
-    addItem(contentItem: Content): void {
+    addContentItem(contentItem: Content) {
         this.contentArray.push(contentItem);
     }
     //5. function that returns the number of items in the array
-    getNumOfItems(): number {
+    getNumOfItems() {
         return this.contentArray.length;
     }
     //6. function that takes an input of an index of the array and returns a reader-friendly html output of a Content item's properties at that index (title, description, creator, imgURL and type). Note that the imgURL should be used to generate an image tag. - Bonus refers to this function
-    getIndexContent(index: number): string {
-        const contentItem = this.contentArray[index];
+    outputHtmlContent(i: number): string {
+        const contentItem:Content = this.contentArray[i];
 
-        if(!contentItem){
-            return 'Invalid';
-        }
+        const imgTag = `<img src="${contentItem.imgURL}">`;
 
-    const imgTag = contentItem.imgURL ? `<img src="${contentItem.imgURL}" alt="Image">` : '';
-    
-        return `
-            <div>
-                <h3>${contentItem.title}</h3>
-                <p>Description: ${contentItem.description}</p>
-                <p>Creator: ${contentItem.creator}</p>
-                ${imgTag}
-                <p>Type: ${contentItem.type || 'N/A'}</p>
-            </div>
-        `;
+        return `<div>
+        <h3>${contentItem.title}</h3>
+        <ul> 
+        <li>${contentItem.description}</li>
+        <li>${contentItem.creator}</li>
+        <li>${contentItem.type}</li>
+        <li>${imgTag}</li>
+        </ul>
+        </div>`;
     }
 }
