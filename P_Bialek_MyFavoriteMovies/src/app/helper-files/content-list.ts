@@ -28,12 +28,10 @@ export class ContentList{
 
         return `<div>
         <h3>${contentItem.title}</h3>
-        <ul> 
-        <li>${contentItem.description}</li>
-        <li>${contentItem.creator}</li>
-        <li>${contentItem.type}</li>
-        <li>${imgTag}</li>
-        </ul>
+        <p>Description: ${contentItem.description}</p>
+        <p>Creator: ${contentItem.creator}</p>
+        <p>Type: ${contentItem.type}</p>
+        <p>${imgTag}</p>
         </div>`;
     }
 }
