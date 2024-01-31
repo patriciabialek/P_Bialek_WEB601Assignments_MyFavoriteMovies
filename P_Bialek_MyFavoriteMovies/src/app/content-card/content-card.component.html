@@ -1,5 +1,15 @@
-<!-- Display the contents of your ContentList in your Content-Card component's html,utilizing the function you defined in the ContentList class -->
-<!-- <span class="body" [innerHTML]="contentList.outputHtmlContent(0)"></span> # indicates index -->
-<section *ngFor="let contentItem of contentList.getContentArray; let i = index">
-<div [innerHTML]="contentList.outputHtmlContent(i)"></div>
-</section>
+<div class="container">
+  <h3>{{ contentItems.title }}</h3>
+  
+  <img [src]="contentItems.imgURL" (click)="showContentDetails()"/>
+
+  <p>Description: {{ contentItems.description }}</p>
+
+  <p>Creator: {{ contentItems.creator }}</p>
+
+  <p>Type: {{ contentItems.type }}</p>
+
+  <div *ngFor="let tag of contentItems.tags">Tags: </div>
+</div>
+  
+
