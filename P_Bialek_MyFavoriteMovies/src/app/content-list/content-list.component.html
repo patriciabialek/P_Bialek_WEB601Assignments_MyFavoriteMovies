@@ -1,17 +1,5 @@
-<!-- <div *ngFor="let content of contentArray">
-    <div>
-        <h2>{{ content.title }}</h2>
-        <p>{{ content.description }}</p>
-        <p>{{ content.creator }}</p>
-        <p>{{ content.type }}</p>
-        <p>{{ content.imgURL }}</p>
-        <div *ngFor="let tag of content.tags"></div>
-    </div>
-</div> -->
-<!-- content-list.component.html -->
-
 <div>
-    <h2>Content List</h2>
-    <app-content-card *ngFor="let content of contentArray" [contentItems]="content"></app-content-card>
+    <h2>List</h2>
+    <app-content-card *ngFor="let contentItem of contentArray" [content]="contentItem"></app-content-card>
   </div>
   
