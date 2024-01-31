@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentListComponent } from '../content-list/content-list.component';
 import { Content } from '../helper-files/content-interface';
@@ -10,7 +10,8 @@ import { Content } from '../helper-files/content-interface';
   templateUrl: './content-card.component.html',
   styleUrl: './content-card.component.scss'
 })
-export class ContentCardComponent implements OnInit{
+
+export class ContentCardComponent{
   //allows data to be passed from the parent component to the child component 
   //Content-list passes down 'content' property(parent)
   @Input() content: Content;
@@ -21,9 +22,6 @@ export class ContentCardComponent implements OnInit{
   }
 
   constructor() {
-    
-  }
-  ngOnInit(){
-
+  
   }
 }
