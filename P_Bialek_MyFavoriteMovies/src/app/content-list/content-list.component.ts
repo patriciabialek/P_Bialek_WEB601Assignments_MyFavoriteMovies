@@ -1,14 +1,15 @@
-import { Component, Input} from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
 import {ContentCardComponent} from '../content-card/content-card.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent],
+  imports: [CommonModule, ContentCardComponent, RouterOutlet],
   templateUrl: './content-list.component.html',
-  styleUrl: './content-list.component.scss'
+  styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
   contentArray: Content[] = [
@@ -18,7 +19,7 @@ export class ContentListComponent {
       creator: "Henry Selick", 
       imgURL: "https://upload.wikimedia.org/wikipedia/en/3/36/Coraline_poster.jpg", 
       type: "Fantasy", 
-      tags: ["tag1, ", "tag2, ", "tag3"],
+      tags: ["tag1", "tag2", "tag3"],
     },
     {
       id: 2, 
@@ -65,9 +66,9 @@ export class ContentListComponent {
       type: "Thriller", 
       tags: ["tag1", "tag2", "tag3"],
     },
-  ]
+  ];
 
-  constructor() {
-  
+  constructor(){
+
   }
 }
