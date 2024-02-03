@@ -1,18 +1,19 @@
 <!-- can also do is first -->
 <div [style.border]="content.id === 1 ? '2px solid black' : '1px solid purple'">
-  <h3>{{ content.title }}</h3>
-  
-  <img [src]="content.imgURL" (click)="showDetails()"/>
-
-  <p>Description: {{ content.description }}</p>
-
-  <p>Creator: {{ content.creator }}</p>
-
-  <p>Type: {{ content.type }}</p>
-
-  <div *ngFor="let tag of content.tags">
-    Tags: {{tag}}
-  </div>
-</div>
-  
-
+    <h3>{{ content.title }}</h3>
+     <img [src]="content.imgURL" (click)="showDetails()"/>
+   
+   
+    <p>Description: {{ content.description }}</p>
+   
+   
+    <p>Creator: {{ content.creator }}</p>
+   
+   
+    <p>Type: {{ content.type }}</p>
+   
+   
+    <div *ngFor="let tag of content.tags">
+      Tags: {{tag}}
+    </div>
+   </div>
