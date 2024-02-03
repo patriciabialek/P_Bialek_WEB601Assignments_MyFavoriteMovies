@@ -1,5 +1,5 @@
 <!-- can also do is first -->
-<div [style.border]="content.id === 1 ? '2px solid black' : '1px solid purple'">
+<div [style.border]="content.id === 1 ? '2px solid black' : '1px solid pink'">
     <h3>{{ content.title }}</h3>
      <img [src]="content.imgURL" (click)="showDetails()"/>
    
@@ -12,8 +12,9 @@
    
     <p>Type: {{ content.type }}</p>
    
-   
+   <div>Tags: 
     <div *ngFor="let tag of content.tags">
-      Tags: {{tag}}
+      {{tag}}
     </div>
    </div>
+</div>
