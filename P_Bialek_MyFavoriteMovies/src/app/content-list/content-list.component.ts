@@ -54,7 +54,7 @@ export class ContentListComponent {
       creator: "Paul Verhoeven", 
       imgURL: "https://m.media-amazon.com/images/M/MV5BNzcyMjExNjg3OF5BMl5BanBnXkFtZTgwOTY4Mjc1MDE@._V1_.jpg", 
       type: "Drama", 
-      tags: ["Dancers", "Nomi", "Las Vegas"],
+      tags: ["Dancers", "Nomi", "LasVegas"],
     },
     {
       id: 6, 
