@@ -13,6 +13,7 @@ export class ContentCardComponent {
   @Input() content: Content;
   
   showDetails() {
+    console.log('Image clicked!');
     console.log(`Image ID: ${this.content.id}, Image Title: ${this.content.title}`);
   }
  
