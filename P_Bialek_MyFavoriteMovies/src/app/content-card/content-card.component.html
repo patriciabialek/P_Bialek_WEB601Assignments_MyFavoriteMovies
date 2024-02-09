@@ -3,7 +3,11 @@
 <div class="card">
   <h3 class="heading">{{ content.title }}</h3>
   
-  <img class="img" [src]="content.imgURL" (click)="showDetails()"/>
+  <img class="img" *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" (click)="showDetails()"/>
+
+  <ng-template #defaultImage>
+    <img class="default-img" src="https://hips.hearstapps.com/hmg-prod/images/best-fall-movies-1659459329.jpg?crop=0.467xw:1.00xh;0.214xw,0&resize=1200:*" (click)="showDetails()"/>
+  </ng-template>
   
   <div class="container">
     <p>Description: {{ content.description }}</p>

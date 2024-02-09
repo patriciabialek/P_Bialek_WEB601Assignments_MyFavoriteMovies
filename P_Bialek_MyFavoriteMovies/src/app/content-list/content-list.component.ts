@@ -80,8 +80,7 @@ export class ContentListComponent {
       id: 8, 
       title: "Pulp Fiction", 
       description: "Pulp Fiction is a stylish and unconventional crime film that weaves together multiple interconnected stories of mobsters, hitmen, and other colorful characters in a non-linear narrative, creating an iconic and genre-defying cinematic experience.", 
-      creator: "Quentin Tarantino", 
-      imgURL: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15684_p_v13_an.jpg", 
+      creator: "Quentin Tarantino",  
       tags: ["Mobsters", "Hitmen", "Crime"],
     },
   ];
