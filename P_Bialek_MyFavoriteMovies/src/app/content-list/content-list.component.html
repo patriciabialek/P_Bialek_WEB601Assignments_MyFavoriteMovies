@@ -1,4 +1,25 @@
+<!-- no type set -->
 <div>
-    <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
+    <h2>No Type</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
 </div>
+
+<div>
+    <h2>Drama</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Drama'" [content]="item"></app-content-card>
+</div>
+
+<div>
+    <h2>Horror</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Horror'" [content]="item"></app-content-card>
+</div>
+
+<div>
+    <h2>Fantasy</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Fantasy'" [content]="item"></app-content-card>
+</div>
+
+<!-- <div>
+    <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
+</div> -->
   

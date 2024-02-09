@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Content } from '../helper-files/content-interface';
 import {ContentCardComponent} from '../content-card/content-card.component';
+import {FilterTypePipe} from '../filter-type.pipe';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent],
+  imports: [CommonModule, ContentCardComponent, FilterTypePipe],
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
@@ -79,7 +80,7 @@ export class ContentListComponent {
       title: "Pulp Fiction", 
       description: "Pulp Fiction is a stylish and unconventional crime film that weaves together multiple interconnected stories of mobsters, hitmen, and other colorful characters in a non-linear narrative, creating an iconic and genre-defying cinematic experience.", 
       creator: "Quentin Tarantino", 
-      imgURL: "https://m.media-amazon.com/images/I/51CjQaxb2HL._AC_SY445_.jpg", 
+      imgURL: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15684_p_v13_an.jpg", 
       tags: ["Mobsters", "Hitmen", "Crime"],
     },
   ];
