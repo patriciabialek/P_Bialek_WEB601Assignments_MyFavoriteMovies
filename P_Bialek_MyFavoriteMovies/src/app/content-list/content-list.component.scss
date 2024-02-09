@@ -1,5 +1,41 @@
 h2{
     text-align: center;
     font-size: 2.2em;
-    color: pink;
+    text-decoration: underline;
+}
+
+.container{
+    margin: 0 20%;
+}
+
+div{
+    margin: 0  0 60px 0;
+}
+
+.card-fantasy{
+    border: 3px solid darkmagenta;
+}
+
+.card-fantasy > h2{
+    color: darkmagenta;
+}
+
+.card-drama{
+    border: 3px solid darkorange;
+}
+
+.card-drama > h2{
+    color: darkorange;
+}
+
+.card-horror{
+    border: 3px solid darkred;
+}
+
+.card-horror > h2{
+    color: darkred;
+}
+
+.card-none{
+    border: 3px solid black;
 }
