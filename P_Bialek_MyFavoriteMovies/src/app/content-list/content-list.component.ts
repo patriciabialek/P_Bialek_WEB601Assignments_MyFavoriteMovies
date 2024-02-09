@@ -65,6 +65,23 @@ export class ContentListComponent {
       type: "Thriller", 
       tags: ["Ballet", "SwanLake", "Obessive"],
     },
+    {
+      id: 7, 
+      title: "Whiplash", 
+      description: "Whiplash is an intense psychological drama that follows the tumultuous relationship between an ambitious young jazz drummer and his abusive music instructor as they push each other to the brink of obsession and excellence.", 
+      creator: "Damien Chazelle", 
+      imgURL: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10488558_p_v12_ai.jpg", 
+      type: "Drama", 
+      tags: ["Drums", "Instructor", "Music"],
+    },
+    {
+      id: 8, 
+      title: "Pulp Fiction", 
+      description: "Pulp Fiction is a stylish and unconventional crime film that weaves together multiple interconnected stories of mobsters, hitmen, and other colorful characters in a non-linear narrative, creating an iconic and genre-defying cinematic experience.", 
+      creator: "Quentin Tarantino", 
+      imgURL: "https://m.media-amazon.com/images/I/51CjQaxb2HL._AC_SY445_.jpg", 
+      tags: ["Mobsters", "Hitmen", "Crime"],
+    },
   ];
 
   constructor(){
