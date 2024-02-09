@@ -20,7 +20,6 @@ export class FilterTypePipe implements PipeTransform {
     return value.filter(item => !item.type);
     }
 
-
     //filters items based on the type provided ex.'Horror'
     //return (Array.filter()) iterates over each item in 'value' & returns the type that matches the provided type.
     return value.filter(item => item.type === type);
