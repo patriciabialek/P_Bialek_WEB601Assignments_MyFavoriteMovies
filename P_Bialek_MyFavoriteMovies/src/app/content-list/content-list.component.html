@@ -18,6 +18,21 @@
     <h2>Fantasy</h2>
     <app-content-card *ngFor="let item of contentArray | filterType:'Fantasy'" [content]="item"></app-content-card>
 </div>
+
+<div class="card-comedy">
+    <h2>Comedy</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Comedy'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-scifi">
+    <h2>Sci-Fi</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Sci-Fi'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-thriller">
+    <h2>Thriller</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Thriller'" [content]="item"></app-content-card>
+</div>
 </div>
 
 <!-- <div>

@@ -36,6 +36,30 @@ div{
     color: darkred;
 }
 
+.card-comedy{
+    border: 3px solid green;
+}
+
+.card-comedy > h2{
+    color: green;
+}
+
+.card-scifi{
+    border: 3px solid darkcyan;
+}
+
+.card-scifi > h2{
+    color: darkcyan;
+}
+
+.card-thriller{
+    border: 3px solid lightcoral;
+}
+
+.card-thriller > h2{
+    color: lightcoral;
+}
+
 .card-none{
     border: 3px solid black;
 }
