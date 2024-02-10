@@ -14,10 +14,10 @@
    
     <p>Creator: {{ content.creator }}</p>
    
-    <p>Type: {{ content.type }}</p>
+    <p appHoverAffect typeStyle="textDecoration">Type: {{ content.type }}</p>
    
     <div>Tags: 
-      <div class="list" *ngFor="let tag of content.tags">
+      <div class="list" *ngFor="let tag of content.tags" appHoverAffect tagStyle="fontWeight">
         {{tag}}
       </div>
     </div>
