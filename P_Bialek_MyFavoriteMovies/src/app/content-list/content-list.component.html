@@ -1,4 +1,44 @@
-<div>
-    <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
+<div class="container">
+<div class="card-none">
+    <h2>No Type</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:''" [content]="item"></app-content-card>
 </div>
+
+<div class="card-drama">
+    <h2>Drama</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Drama'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-horror">
+    <h2>Horror</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Horror'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-fantasy">
+    <h2>Fantasy</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Fantasy'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-comedy">
+    <h2>Comedy</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Comedy'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-scifi">
+    <h2>Sci-Fi</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Sci-Fi'" [content]="item"></app-content-card>
+</div>
+
+<div class="card-thriller">
+    <h2>Thriller</h2>
+    <app-content-card *ngFor="let item of contentArray | filterType:'Thriller'" [content]="item"></app-content-card>
+</div>
+</div>
+
+<!-- <div>
+    <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
+</div> 
+
+[ngClass]="{ 'card-Fantasy': true }"
+-->
   

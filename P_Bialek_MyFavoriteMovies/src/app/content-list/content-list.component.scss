@@ -1,0 +1,65 @@
+h2{
+    text-align: center;
+    font-size: 2.2em;
+    text-decoration: underline;
+}
+
+.container{
+    margin: 0 20%;
+}
+
+div{
+    margin: 0  0 60px 0;
+}
+
+.card-fantasy{
+    border: 3px solid darkmagenta;
+}
+
+.card-fantasy > h2{
+    color: darkmagenta;
+}
+
+.card-drama{
+    border: 3px solid darkorange;
+}
+
+.card-drama > h2{
+    color: darkorange;
+}
+
+.card-horror{
+    border: 3px solid darkred;
+}
+
+.card-horror > h2{
+    color: darkred;
+}
+
+.card-comedy{
+    border: 3px solid green;
+}
+
+.card-comedy > h2{
+    color: green;
+}
+
+.card-scifi{
+    border: 3px solid darkcyan;
+}
+
+.card-scifi > h2{
+    color: darkcyan;
+}
+
+.card-thriller{
+    border: 3px solid lightcoral;
+}
+
+.card-thriller > h2{
+    color: lightcoral;
+}
+
+.card-none{
+    border: 3px solid black;
+}
