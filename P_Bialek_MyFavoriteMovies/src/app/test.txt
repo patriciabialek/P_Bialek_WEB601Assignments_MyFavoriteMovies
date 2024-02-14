@@ -1,0 +1,109 @@
+Using the "teachers" array provided below, create a table and using *ngFor populate the rows of the table with the items in the array.
+
+Each row should contain a seperate table cell for the name, field, age and courses.
+
+in the table cell for the courses, using an *ngSwitch, display a message of "No Courses" if the teacher does not have any courses. If the teacher does have courses specified, display each course in its own <div> 
+
+  teachers=[{"name":"Jim Smith", "field":"Math", "age":50, "courses":["MAT101", "MAT200", "CALC150"]},
+  {"name":"Mike Jones", "field":"Geography", "age":38, "courses":["GEO101", "MAP400", "SEA120"]},
+  {"name":"Sarah Boone", "field":"Art", "age":42, "courses":["ART101", "PAT250", "SCO150"]},
+  {"name":"Jin Zhang", "field":"Science", "age":50},
+  {"name":"Alice Wonder", "field":"Math", "age":36, "courses":["MAT301", "ALG200", "ALG650"]}];
+->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Field</th>
+      <th>Age</th>
+      <th>Courses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teacher of teachers">
+      <td>{{ teacher.name }}</td>
+      <td>{{ teacher.field }}</td>
+      <td>{{ teacher.age }}</td>
+      <td>
+        <div *ngIf="teacher.courses; else noCourses">
+          <div *ngFor="let course of teacher.courses">
+            {{ course }}
+          </div>
+        </div>
+        <ng-template #noCourses>
+          <div>No Courses</div>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Create an interface called Student that has the following properties:
+
+FirstName as string
+LastName as string
+StudentID as string
+DateOfBirth as date
+Courses as an array of string
+AverageGrade as and optional number
+
+->
+export interface Student {
+FirstName: string;
+LastName: string;
+StudentID: string;
+DateOfBirth: Date;
+Courses: string[];
+AverageGrade?: number;
+}
+
+Create an attribute directive called "GradeHighlight" that does the following:
+
+Takes in a parameter called "Grade"
+Sets the element's font size to 40px.
+Sets the element's font weight to bold.
+
+If the value of the "Grade" parameter is 50 or greater, set the element's color to green.
+If the value of the "Grade" parameter is less than 50, set the element's color to red.
+
+Add click event handler so that if the element is clicked on, the following will occur:
+If the value of the "Grade" parameter is 50 or greater, display an alert box with the following message: "This is a passing grade"
+If the value of the "Grade" parameter is less than 50, display an alert box with the following message: "This is a failing grade"
+
+->
+import { Directive, Input, HostListener, ElementRef, Renderer2 } from '@angular/core';
+
+
+@Directive({
+selector: '[appGradeHighlight]',
+standalone: true
+})
+export class GradeHighlightDirective {
+@Input('Grade') grade: number;
+
+
+constructor(private el: ElementRef, private renderer: Renderer2) { }
+
+
+@HostListener('click') onClick() {
+if (this.grade >= 50) {
+alert("This is a passing grade");
+} else {
+alert("This is a failing grade");
+}
+
+
+this.renderer.setStyle(this.el.nativeElement, 'font-size', '40px');
+this.renderer.setStyle(this.el.nativeElement, 'font-weight', 'bold');
+
+
+if (this.grade >= 50) {
+this.renderer.setStyle(this.el.nativeElement, 'color', 'green');
+} else {
+this.renderer.setStyle(this.el.nativeElement, 'color', 'red');
+}
+}
+
+
+
+
