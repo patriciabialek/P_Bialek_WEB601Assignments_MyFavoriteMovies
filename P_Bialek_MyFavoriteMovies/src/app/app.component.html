@@ -1,6 +1,6 @@
 <h1>{{ title }}</h1>
-<div>
-    <!-- Single ContentCard with custom ID -->
+<div class="card" [style.box-shadow]="customContent ? '0 10px 12px black' : 'none'">
+    <!-- Single ContentCard -->
     <app-content-card *ngIf="customContent" id="custom-card" [content]="customContent"></app-content-card>
-    <app-content-list></app-content-list>
 </div>
+<app-content-list></app-content-list>
