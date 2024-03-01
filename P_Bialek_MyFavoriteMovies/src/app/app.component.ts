@@ -9,11 +9,12 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import {Content} from './helper-files/content-interface';
 import { MovieService } from './movie.service';
+import {MessagesComponent} from './messages/messages.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContentCardComponent, ContentListComponent, FormsModule, CommonModule],
+  imports: [RouterOutlet, ContentCardComponent, ContentListComponent, FormsModule, CommonModule, MessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

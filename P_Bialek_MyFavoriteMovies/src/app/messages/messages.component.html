@@ -1,1 +1,5 @@
-<p>messages works!</p>
+<!-- checks message length,  displays content if above 0-->
+<div *ngIf="messages.length > 0">
+    <!-- loops over message elements and displays each message -->
+    <div *ngFor="let message of messages">{{ message }}</div>
+</div>
