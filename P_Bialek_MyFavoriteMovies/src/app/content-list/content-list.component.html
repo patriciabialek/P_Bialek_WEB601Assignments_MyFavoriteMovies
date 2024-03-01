@@ -6,6 +6,10 @@
 <p class="message" [style.color]="isFound ? 'green' : 'red'">
     {{ message }}
 </p>
+
+<!-- Event binding: Listens for 'contentAdded' by child and then executes method by parent (handleContentSubmission).
+Passes event data-->
+<app-create-content (contentAdded)="handleContentSubmission($event)"></app-create-content>
   
 <div class="container">
 <div class="card-none">

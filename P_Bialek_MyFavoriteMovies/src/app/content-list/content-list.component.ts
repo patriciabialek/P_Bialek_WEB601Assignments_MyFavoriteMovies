@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Content } from '../helper-files/content-interface';
 import {ContentCardComponent} from '../content-card/content-card.component';
 import {FilterTypePipe} from '../filter-type.pipe';
+import {CreateContentComponent} from '../create-content/create-content.component';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, FilterTypePipe, FormsModule],
+  imports: [CommonModule, ContentCardComponent, FilterTypePipe, FormsModule, CreateContentComponent],
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
@@ -97,6 +98,23 @@ export class ContentListComponent {
     
     this.message = this.isFound ? `Content with title '${this.title}' found.` : `Content with title '${this.title}' not found.`;
   }
+
+    //Method to handle the submission of new content items; param of type 'Content'
+    handleContentSubmission(newContent: Content) {
+    //Ensuring id is a number
+    newContent.id = Number(newContent.id);
+    //Not working - this.contentArray.push(newContent);
+    
+    //Creates a new array by taking the existing contentArray into a new one
+    //Then it appends the newContent object to the new array
+    this.contentArray = [...this.contentArray, newContent];
+
+    //Debug
+    console.log(this.contentArray)
+    //output title of new content item
+    console.log("Success! New content added: ", newContent.title)
+  }
+
 
   constructor(){
 

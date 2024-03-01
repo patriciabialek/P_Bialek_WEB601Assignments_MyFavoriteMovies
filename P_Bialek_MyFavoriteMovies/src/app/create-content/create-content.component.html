@@ -1,0 +1,13 @@
+<!-- all input fields to make a new piece of content -->
+<div>
+    <input type="text" [(ngModel)]="content.id" placeholder="ID"><br>
+    <input type="text" [(ngModel)]="content.title" placeholder="Title"><br>
+    <input type="text" [(ngModel)]="content.description" placeholder="Description"><br>
+    <input type="text" [(ngModel)]="content.creator" placeholder="Creator"><br>
+    <input type="text" [(ngModel)]="content.imgURL" placeholder="Image URL"><br>
+    <input type="text" [(ngModel)]="content.type" placeholder="Type"><br>
+    <input type="text" [(ngModel)]="tagInput" placeholder="Tags"><br>
+    <!-- sends a new content item to our list -->
+    <button (click)="submitContent()">Submit</button>
+    <!-- if fails to be added -->
+    <p *ngIf="errorMessage" style="color: red; font-weight: bold;">{{ errorMessage }}</p>
