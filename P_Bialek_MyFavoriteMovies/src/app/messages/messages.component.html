@@ -1,5 +1,7 @@
 <!-- checks message length,  displays content if above 0-->
-<div *ngIf="messages.length > 0">
+<div *ngIf="messageService.messages.length">
     <!-- loops over message elements and displays each message -->
-    <div *ngFor="let message of messages">{{ message }}</div>
+    <div *ngFor="let message of messageService.messages">
+        {{ message }}
+    </div>
 </div>

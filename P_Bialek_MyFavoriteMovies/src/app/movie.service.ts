@@ -25,7 +25,6 @@ export class MovieService {
     //if match found  - return Content object. If not - undefined
     const content =(contentArray.find(content => content.id === id));
     //adds a message to messageService
-    console.log(`Content Item at id: ${id}`);
     this.messageService.add(`Content Item at id: ${id}`);
     return of(content);
   }
