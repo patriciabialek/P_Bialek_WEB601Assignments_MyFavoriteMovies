@@ -1,7 +1,7 @@
 //define an interface with the following parameters
 //Note: ? is optional
 export interface Content {
-    id?: number;
+    id: number;
     title?: string;
     description?: string;
     creator?: string;
