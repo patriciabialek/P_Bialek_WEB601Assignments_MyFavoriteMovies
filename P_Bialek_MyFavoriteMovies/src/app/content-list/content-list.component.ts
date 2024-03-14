@@ -28,7 +28,11 @@ export class ContentListComponent implements OnInit {
   isFound: boolean = false;
 
   onContentAdded(newContent: Content) {
-    this.contentArray.push(newContent);
+    console.log('New content:', newContent);
+    this.contentArray = [...this.contentArray, newContent];
+    if(newContent){
+      console.log(`Success ${newContent.title}`);
+    }
   }
 
   //injecting movieService of type MovieService into the component
