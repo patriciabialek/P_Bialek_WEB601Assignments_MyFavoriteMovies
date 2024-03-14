@@ -34,28 +34,27 @@ export class ModifyContentComponentComponent {
   addContentToList(newContentItem: Content): void {
     console.log('Adding new content:', newContentItem);
 
-      // Ensure newContentItem.tags is of type string
+      // ensure newContentItem.tags is of type string
       if (typeof newContentItem.tags === 'string') {
-        // Use type assertion to indicate that newContentItem.tags is a string
+        // make it so that newContentItem.tags is a string
         newContentItem.tags = (newContentItem.tags as string).split(',');
       } else {
-        // If newContentItem.tags is not a string, handle it accordingly
-        // For example, you can assign an empty array
+        // if newContentItem.tags is not a string
         newContentItem.tags = [];
       }
     
     this.contentService.addContent(newContentItem).subscribe(newContentFromServer => {
-      // Add the new content to the array
-      //this.newContentArray.push(newContentFromServer);
+      // add the new content to the array
       this.newContentArray.push(newContentFromServer);
-      this.contentAdded.emit(newContentFromServer); // Ensure that this line emits the event
+      // emit the event
+      this.contentAdded.emit(newContentFromServer); 
 
       console.log('Content Array after adding:', this.newContentArray);
 
-      // Set success message
+      // add success message
       this.message.add(`Content "${newContentItem.title}" added successfully!`);
 
-      // Clear input fields after adding content
+      // clear input fields after 
       this.newContent = { title: '', description: '', creator: '', type: '', imgURL: '', tags: [] };
     });
   }
