@@ -27,14 +27,12 @@ export class ContentListComponent implements OnInit {
   message: string = '';
   isFound: boolean = false;
 
+  onContentAdded(newContent: Content) {
+    this.contentArray.push(newContent);
+  }
+
   //injecting movieService of type MovieService into the component
   constructor(private movieService: MovieService){ }
-
-  //Assignment 7:
-    // Method to handle content added event
-    onContentAdded(newContent: Content) {
-      this.contentArray.push(newContent); // Add new content to contentArray
-    }
 
   checkTitle() {
     // Check if 'this.title' is defined

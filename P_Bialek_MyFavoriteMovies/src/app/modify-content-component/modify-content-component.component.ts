@@ -2,47 +2,45 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { Content } from '../helper-files/content-interface';
 import { ContentService } from '../content.service';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-modify-content-component',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ],
   templateUrl: './modify-content-component.component.html',
   styleUrl: './modify-content-component.component.scss'
 })
 export class ModifyContentComponentComponent {
-  // Event emitter for content added
+  newContent: Content = {
+    title: '',
+    description: '',
+    creator: '',
+    type: '',
+    imgURL: '',
+    tags: []
+  };
+
   @Output() contentAdded = new EventEmitter<Content>(); 
 
-  // Object to hold new content
-    newContent: Content = {
-      id: 0,
-      title: '',
-      description: '',
-      creator: ''
-    }; 
+  newContentArray: Content[] = [];
 
-    constructor(private contentService: ContentService) { }
-  
-      // Method to add new content to the simulated server database
-      addContent() {
-        this.contentService.addContent(this.newContent)
-          .subscribe(newContentWithId => {
-            console.log('Content added successfully:', newContentWithId);
-            this.clearFields(); // Clear input fields after adding content
-          }, error => {
-            console.error('Error adding content:', error);
-          });
-      }
-    
-      // Method to clear input fields
-      // Clear newContent object
-      clearFields() {
-        this.newContent = {
-          id: 0,
-          title: '',
-          description: '',
-          creator: ''
-        }; 
-      }
+  constructor(private contentService: ContentService, private message: MessageService) { }
+
+  ngOnInit() {
+    this.contentService.getContent().subscribe(content => this.newContentArray = content);
+  }
+
+  addContentToList(newContentItem: Content): void {
+    console.log('Adding new content:', newContentItem);
+    this.contentService.addContent(newContentItem).subscribe(newContentFromServer => {
+      // Add the new content to the array
+      this.newContentArray.push(newContentFromServer);
+      console.log('Content Array after adding:', this.newContentArray);
+      // Set success message
+      this.message.add(`Content "${newContentItem.title}" added successfully`);
+      // Clear input fields after adding content
+      this.newContent = { title: '', description: '', creator: '', type: '', imgURL: '', tags: [] };
+    });
+  }
 }
