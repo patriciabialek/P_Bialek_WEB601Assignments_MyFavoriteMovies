@@ -40,7 +40,8 @@ export class ModifyContentComponentComponent {
   // Method to open the dialog
   openAddMovieDialog(): void {
     const dialogRef = this.dialog.open(DialogBoxComponent, {
-      width: '600px',
+      width: '400px',
+      height:'600px',
       data: 'right click'
     });
 
