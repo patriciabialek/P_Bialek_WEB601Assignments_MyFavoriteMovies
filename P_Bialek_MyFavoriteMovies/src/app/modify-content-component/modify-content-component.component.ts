@@ -4,10 +4,14 @@ import { Content } from '../helper-files/content-interface';
 import { ContentService } from '../content.service';
 import {MessageService} from '../message.service';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
 @Component({
   selector: 'app-modify-content-component',
   standalone: true,
-  imports: [FormsModule, ],
+  imports: [FormsModule, MatFormFieldModule, MatButtonModule, MatInputModule],
   templateUrl: './modify-content-component.component.html',
   styleUrl: './modify-content-component.component.scss'
 })
