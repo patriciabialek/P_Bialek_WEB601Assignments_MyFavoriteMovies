@@ -12,10 +12,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 
+import { MatSelectModule } from '@angular/material/select';
+
 @Component({
   selector: 'app-dialog-box',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, CommonModule, MatDialogModule],
+  imports: [MatSelectModule,FormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, CommonModule, MatDialogModule],
   templateUrl: './dialog-box.component.html',
   styleUrl: './dialog-box.component.scss'
 })

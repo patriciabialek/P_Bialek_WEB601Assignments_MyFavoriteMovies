@@ -7,13 +7,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 import { ContentService } from '../content.service';
-import {MessageService} from '../message.service';
+
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-modify-content-component',
   standalone: true,
-  imports: [ MatButtonModule, MatDialogModule],
+  imports: [MatIconModule, MatButtonModule, MatDialogModule],
   templateUrl: './modify-content-component.component.html',
   styleUrl: './modify-content-component.component.scss'
 })

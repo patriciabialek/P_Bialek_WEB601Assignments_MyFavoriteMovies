@@ -1,7 +1,29 @@
-<h1 class="primary-500">{{ title }}</h1>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<button class="menu" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon color="accent">menu</mat-icon>
+    
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>No Type</button>
+  <button mat-menu-item>Drama</button>
+  <button mat-menu-item>Horror</button>
+  <button mat-menu-item>Fantasy</button>
+  <button mat-menu-item>Comedy</button>
+  <button mat-menu-item>Sci-Fi</button>
+  <button mat-menu-item>Thriller</button>
+</mat-menu>
+
+
+<h1 class="primary-500">
+    {{ title }}
+</h1>
+<mat-icon color="primary" class="heart">favorite</mat-icon>
+
 <app-messages></app-messages>
 <div class="card" [style.box-shadow]="customContent ? '0 10px 12px black' : 'none'">
     <!-- Single ContentCard -->
     <app-content-card *ngIf="customContent" id="custom-card" [content]="customContent"></app-content-card>
 </div>
+
 <app-content-list></app-content-list>

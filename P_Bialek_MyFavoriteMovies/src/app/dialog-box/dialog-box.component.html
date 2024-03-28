@@ -3,6 +3,12 @@
 
     <form (ngSubmit)="addContentToList(newContent)">
       <div>
+        <label class="accent-500" for="id">ID:</label>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" id="id" name="id" [(ngModel)]="newContent.id" disabled>
+        </mat-form-field>
+      </div>
+      <div>
         <label class="accent-500" for="title">Title:</label>
         <mat-form-field appearance="fill">
           <input matInput type="text" id="title" name="title" [(ngModel)]="newContent.title" required>

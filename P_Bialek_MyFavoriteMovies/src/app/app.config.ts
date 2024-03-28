@@ -18,7 +18,7 @@ export const appConfig: ApplicationConfig = {
     ...extractProviders(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 1000,
-    })), provideAnimationsAsync(), provideAnimationsAsync()
+    })), provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync()
   ]
 };
 

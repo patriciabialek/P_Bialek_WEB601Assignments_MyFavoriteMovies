@@ -11,11 +11,13 @@ import {Content} from './helper-files/content-interface';
 import { MovieService } from './movie.service';
 import {MessagesComponent} from './messages/messages.component';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContentCardComponent, ContentListComponent, FormsModule, CommonModule, MessagesComponent],
+  imports: [MatMenuModule,RouterOutlet, ContentCardComponent, ContentListComponent, FormsModule, CommonModule, MessagesComponent,MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

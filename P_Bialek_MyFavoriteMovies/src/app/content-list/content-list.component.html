@@ -1,8 +1,9 @@
 <app-modify-content-component (contentAdded)="onContentAdded($event)"></app-modify-content-component>
 
-
+    <h2 class="primary-500">Search Title</h2>
     <div class="input">
         <mat-form-field appearance="fill">
+            <mat-icon color="primary">search</mat-icon>
             <input matInput type="text" name="title" [(ngModel)]="title">
         </mat-form-field>
         <!-- [(ngModel)]="title" -->
