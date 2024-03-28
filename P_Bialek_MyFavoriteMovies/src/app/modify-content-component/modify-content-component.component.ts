@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Content } from '../helper-files/content-interface';
 import { ContentService } from '../content.service';
 import {MessageService} from '../message.service';
+import { CommonModule } from '@angular/common';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-modify-content-component',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatButtonModule, MatInputModule],
+  imports: [FormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, CommonModule],
   templateUrl: './modify-content-component.component.html',
   styleUrl: './modify-content-component.component.scss'
 })
@@ -28,11 +29,22 @@ export class ModifyContentComponentComponent {
   @Output() contentAdded = new EventEmitter<Content>(); 
 
   newContentArray: Content[] = [];
+  isDialogOpen: boolean = false;
 
   constructor(private contentService: ContentService, private message: MessageService) { }
 
   ngOnInit() {
     this.contentService.getContent().subscribe(content => this.newContentArray = content);
+  }
+
+  openAddMovieDialog(): void {
+    this.isDialogOpen = true;
+  };
+
+  closeAddMovieDialog(): void {
+    this.isDialogOpen = false;
+    // Clear input fields
+    this.newContent = { title: '', description: '', creator: '', type: '', imgURL: '', tags: [] };
   }
 
   addContentToList(newContentItem: Content): void {
@@ -60,6 +72,9 @@ export class ModifyContentComponentComponent {
 
       // clear input fields after 
       this.newContent = { title: '', description: '', creator: '', type: '', imgURL: '', tags: [] };
+
+      // Logic for adding content to the list + Close the dialog after adding content
+      this.closeAddMovieDialog(); 
     });
   }
 }
