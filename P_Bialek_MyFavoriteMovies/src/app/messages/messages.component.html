@@ -2,6 +2,6 @@
 <div *ngIf="messageService.messages.length">
     <!-- loops over message elements and displays each message -->
     <div *ngFor="let message of messageService.messages">
-        {{ message }}
+        <p class="accent-500">{{ message }}</p>
     </div>
 </div>

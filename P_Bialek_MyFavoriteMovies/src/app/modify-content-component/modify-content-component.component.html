@@ -1,55 +1,8 @@
 <div class="container">
-  <h2>Add New Movie</h2>
-  <button mat-button (click)="openAddMovieDialog()">Add New Content</button>
+  <h2 class="primary-500">Add New Content</h2>
+  <button class="open" color="primary" mat-button (click)="openAddMovieDialog()">Add New Content</button>
+</div> 
 
-  <div *ngIf="isDialogOpen">
-    <h2>Add Movie</h2>
 
-    <form (ngSubmit)="addContentToList(newContent)">
-      <div>
-        <label for="title">Title:</label>
-        <mat-form-field appearance="fill">
-          <input matInput type="text" id="title" name="title" [(ngModel)]="newContent.title" required>
-        </mat-form-field>
-      </div>
-      <div>
-        <label for="description">Description:</label>
-        <mat-form-field appearance="fill">
-          <textarea matInput id="description" name="description" [(ngModel)]="newContent.description" required></textarea>
-        </mat-form-field>
-      </div>
-      <div>
-        <label for="creator">Creator:</label>
-        <mat-form-field appearance="fill">
-          <input matInput type="text" id="creator" name="creator" [(ngModel)]="newContent.creator" required>
-        </mat-form-field>
-      </div>
-      <div>
-        <label for="type">Type:</label>
-        <mat-form-field appearance="fill">
-          <input matInput type="text" id="type" name="type" [(ngModel)]="newContent.type" required>
-        </mat-form-field>
-      </div>
-      <div>
-        <label for="tags">Tags:</label>
-        <mat-form-field appearance="fill">
-          <input matInput type="text" id="tags" name="tags" [(ngModel)]="newContent.tags" required>
-        </mat-form-field>
-      </div>
-      <div>
-        <label for="imgURL">Image URL:</label>
-        <mat-form-field appearance="fill">
-          <input matInput type="text" id="imgURL" name="imgURL" [(ngModel)]="newContent.imgURL" required>
-        </mat-form-field>
-      </div>
-
-      <button mat-button (click)="closeAddMovieDialog()">Cancel</button>
-      <button mat-button color="primary" (click)="addContentToList(newContent)">Add Content</button>
-    </form>
-  
-  </div>
-  
-  <!-- <button mat-raised-button (click)="openDialog()" type="submit">Add New Content</button> -->
-</div>
 
 

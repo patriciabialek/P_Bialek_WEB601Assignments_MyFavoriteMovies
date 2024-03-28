@@ -1,4 +1,4 @@
-<app-modify-content-component (contentAdded)="onContentAdded($event)"></app-modify-content-component>
+<app-modify-content-component></app-modify-content-component>
 
 
     <div class="input">
@@ -6,7 +6,7 @@
             <input matInput type="text" name="title" [(ngModel)]="title">
         </mat-form-field>
         <!-- [(ngModel)]="title" -->
-        <button mat-button (click)="checkTitle()">Submit</button>
+        <button color="primary" mat-button (click)="checkTitle()">Submit</button>
     </div>
     
     <p class="message" [style.color]="isFound ? 'green' : 'red'">
@@ -49,12 +49,5 @@
         <app-content-card *ngFor="let item of contentArray | filterType:'Thriller'" [content]="item"></app-content-card>
     </div>
     </div>
-    
-    <!-- <div>
-        <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
-    </div> 
-    
-    [ngClass]="{ 'card-Fantasy': true }"
-    -->
 
   

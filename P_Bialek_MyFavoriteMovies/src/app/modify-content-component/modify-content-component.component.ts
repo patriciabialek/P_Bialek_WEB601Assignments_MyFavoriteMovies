@@ -1,18 +1,19 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
 import { Content } from '../helper-files/content-interface';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+
 import { ContentService } from '../content.service';
 import {MessageService} from '../message.service';
-import { CommonModule } from '@angular/common';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-modify-content-component',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatButtonModule, MatInputModule, CommonModule],
+  imports: [ MatButtonModule, MatDialogModule],
   templateUrl: './modify-content-component.component.html',
   styleUrl: './modify-content-component.component.scss'
 })
@@ -26,55 +27,35 @@ export class ModifyContentComponentComponent {
     tags: []
   };
 
-  @Output() contentAdded = new EventEmitter<Content>(); 
-
+  @Output() contentAdded = new EventEmitter<Content>();
+  
   newContentArray: Content[] = [];
-  isDialogOpen: boolean = false;
 
-  constructor(private contentService: ContentService, private message: MessageService) { }
+  constructor(private dialog:MatDialog, private contentService: ContentService) { }
 
   ngOnInit() {
     this.contentService.getContent().subscribe(content => this.newContentArray = content);
   }
 
+  // Method to open the dialog
   openAddMovieDialog(): void {
-    this.isDialogOpen = true;
-  };
+    const dialogRef = this.dialog.open(DialogBoxComponent, {
+      width: '600px',
+      data: 'right click'
+    });
 
-  closeAddMovieDialog(): void {
-    this.isDialogOpen = false;
-    // Clear input fields
-    this.newContent = { title: '', description: '', creator: '', type: '', imgURL: '', tags: [] };
+    // Subscribe to the contentAdded event emitted by the dialog
+    dialogRef.componentInstance.contentAdded.subscribe((newContent: Content) => {
+      this.newContentArray.push(newContent);
+      this.contentAdded.emit(newContent);
+    });
   }
-
   addContentToList(newContentItem: Content): void {
-    console.log('Adding new content:', newContentItem);
-
-      // ensure newContentItem.tags is of type string
-      if (typeof newContentItem.tags === 'string') {
-        // make it so that newContentItem.tags is a string
-        newContentItem.tags = (newContentItem.tags as string).split(',');
-      } else {
-        // if newContentItem.tags is not a string
-        newContentItem.tags = [];
-      }
-    
     this.contentService.addContent(newContentItem).subscribe(newContentFromServer => {
       // add the new content to the array
       this.newContentArray.push(newContentFromServer);
       // emit the event
       this.contentAdded.emit(newContentFromServer); 
-
-      console.log('Content Array after adding:', this.newContentArray);
-
-      // add success message
-      this.message.add(`Content "${newContentItem.title}" added successfully!`);
-
-      // clear input fields after 
-      this.newContent = { title: '', description: '', creator: '', type: '', imgURL: '', tags: [] };
-
-      // Logic for adding content to the list + Close the dialog after adding content
-      this.closeAddMovieDialog(); 
     });
   }
 }

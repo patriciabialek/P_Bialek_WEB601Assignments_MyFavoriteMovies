@@ -11,6 +11,7 @@ import {Content} from './helper-files/content-interface';
 import { MovieService } from './movie.service';
 import {MessagesComponent} from './messages/messages.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

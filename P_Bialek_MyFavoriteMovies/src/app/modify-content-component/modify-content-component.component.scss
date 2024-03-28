@@ -1,24 +1,47 @@
+@import '../../styles.scss';
+
 h2{
     text-align: center;
     margin: 20px 0;
-    color: purple;
 }
 
-button{
-    margin: 10px 0 60px 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: purple;
+h3{
+    margin-top: -20px;
+    padding-top: 40px;
+}
+
+.open{
+    padding: 30px 40px;
+    background-color: rgb(234, 27, 99,0.6);
+    margin: 0 0 40px 0;
+}
+
+.cancel-button{
+    background-color: rgb(234, 27, 99,0.6);;
+    padding: 20px 20px;
+    margin-bottom: 40px;
+    margin-right: 5px;
+}
+
+.submit-button{
+    background-color: rgb(234, 27, 99,0.6);
+    padding: 20px 20px;
+    margin-bottom: 40px;
+    margin-left: 5px;
 }
 
 label{
-    color: purple;
     display: block;
     text-align: center;
-    //margin-top: 20px;
 }
 
 .container{
     text-align: center;
 }
+
+.dialog{
+    background-color: rgb(76, 174, 80,0.7);
+}
+
+//rgb(76, 174, 80) greeen
+//rgb(234, 27, 99) pink
