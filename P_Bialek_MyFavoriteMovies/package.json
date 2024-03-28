@@ -1,6 +1,6 @@
 {
   "name": "p-bialek-my-favorite-movies",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "generateservice": "ng generate service",
     "generatecomponent": "ng generate component",
